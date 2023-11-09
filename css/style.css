@@ -1,0 +1,121 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Acme&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Griffy&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #131d1e;
+    /* font-family: 'Acme', sans-serif; */
+    font-family: 'Griffy';
+
+}
+
+main {
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main img {
+    width: 32%;
+    margin-top: 10%;
+}
+
+button {
+
+    border-radius: 44px;
+    /* background-color: rgb(207, 198, 71); */
+    background: linear-gradient(#d0d4bb, #4f3a2b 71%);
+    color: black;
+    height: 95px;
+    width: 178px;
+    margin: 50px;
+    border: none;
+}
+
+a {
+    background-color: #cf4747;
+    color: black;
+    text-decoration: none;
+    border: 2px solid black;
+    border-radius: 38px;
+    padding: 25px 25px 15px;
+    border-top: none;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.csslider {
+    margin: 100px 0 0 0;
+    display: flex;
+    justify-content: space-between;
+    width: 31%;
+}
+
+
+.dots {
+    animation: clic 0.7s infinite;
+    animation-timing-function: steps(7, jump-both);
+}
+
+
+.dots:nth-child(even) {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(#f7efe3, #382d1e);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.dots:nth-child(odd) {
+    width: 30px;
+    height: 30px;
+    background: radial-gradient(#f7efe3, #cf4747);
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+
+.active {
+    background-color: #888;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes clic {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    to {
+        display: block;
+        opacity: 1;
+    }
+
+}
+
+@media screen and (max-width:476px) {
+    .csslider {
+        margin: 100px 0 0 0;
+        display: flex;
+        justify-content: space-between;
+        width: 60%;
+    }
+
+    main img {
+        width: 62%;
+        margin-top: 10%;
+    }
+}

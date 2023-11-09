@@ -1,0 +1,978 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #2b1225;
+
+}
+
+main {
+    text-align: center;
+}
+
+
+
+a {
+    cursor: pointer;
+}
+
+#container {
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
+
+
+
+
+
+
+button {
+    background: #e6c35b;
+    width: 370px;
+    height: 59px;
+    border: 1px solid red;
+    border-radius: 10px;
+    margin: 25px 0 25px 0;
+}
+
+button a {
+    text-decoration: none;
+    color: red;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/*    partyScore  */
+
+#partyScore {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    color: black;
+}
+
+#gameScore {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    color: black;
+}
+
+
+
+#popup {
+    width: 300px;
+    background-color: #30161c;
+    border: 3px solid #c9a743;
+    border-radius: 20px;
+    box-shadow: 2px 0 0 #e2d8ab, -2px 0 0 #e2d8ab, 0 2px 0 #e2d8ab, 0 -2px 0 #e2d8ab, 1px 1px #e2d8ab, -1px -1px 0 #e2d8ab, 1px -1px 0 #e2d8ab, -1px 1px 0 #e2d8ab;
+    padding: 10px;
+    position: absolute;
+    top: 0%;
+    left: 20%;
+
+    display: none;
+}
+
+#popup h4 {
+    font-size: 2.4em;
+    font-weight: bold;
+}
+
+#popup .color-blue {
+    text-transform: uppercase;
+    border: #9dd0da;
+    color: #2d8eb4;
+    text-shadow: 2px 0 0 #9dd0da, -2px 0 0 #9dd0da, 0 2px 0 #9dd0da, 0 -2px 0 #9dd0da, 1px 1px #9dd0da, -1px -1px 0 #9dd0da, 1px -1px 0 #9dd0da, -1px 1px 0 #9dd0da;
+}
+
+#popup .gold {
+
+    color: #f7d020;
+    text-shadow: 2px 0 0 #e2d8ab, -2px 0 0 #e2d8ab, 0 2px 0 #e2d8ab, 0 -2px 0 #e2d8ab, 1px 1px #e2d8ab, -1px -1px 0 #e2d8ab, 1px -1px 0 #e2d8ab, -1px 1px 0 #e2d8ab;
+
+}
+
+#popup button {
+
+    height: 40px;
+    background: linear-gradient(#fff, #218efb);
+    box-shadow: 2px 0 0 #e6c35b, -2px 0 0 #e6c35b, 0 2px 0 #e6c35b, 0 -2px 0 #e6c35b, 1px 1px #e6c35b, -1px -1px 0 #e6c35b, 1px -1px 0 #e6c35b, -1px 1px 0 #e6c35b;
+    margin: 0 19px;
+    border: #e6c35b 2px solid;
+    width: 45px;
+}
+
+#jackpot {
+    /* width: 449px; */
+    /* background-color: #fff; */
+    border-radius: 20px;
+    position: absolute;
+    z-index: 99;
+    padding: 15px;
+    left: 30%;
+    /* display: none; */
+}
+
+
+#jackpot h2 {
+    color: #f7d020;
+    font-size: 14em;
+    /* text-shadow: -10px 0 0 #e2d8ab, -17px 0 0 #e2d8ab; */
+    text-shadow: -12px 0 0 #e2d8ab, -7px 0 0 #e2d8ab, 0 2px 0 #e2d8ab, 0 -2px 0 #e2d8ab, 1px 1px #e2d8ab, -1px -1px 0 #e2d8ab, 1px -1px 0 #e2d8ab, -1px 1px 0 #e2d8ab;
+
+    position: absolute;
+    animation: flash 0.3s infinite;
+    animation-timing-function: steps(4, jump-both);
+    display: none;
+
+}
+
+
+.monnaie {
+    position: fixed;
+    top: -1vh;
+    font-size: 2rem;
+    transform: translateY(0);
+    animation: falling 3s linear;
+}
+
+@keyframes falling {
+    to {
+
+        transform: translateY(105vh);
+    }
+}
+
+.d-flex {
+    display: flex;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
+
+
+.totauxHead {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.color-white {
+    color: #fff;
+
+    animation: flash 0.3s infinite;
+    animation-timing-function: steps(4, jump-both);
+}
+
+.tran {
+    /* transform: translateY('-120px'); */
+}
+
+@keyframes flash {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+/* .opacity-05 {
+    opacity: 0.3;
+} */
+
+#icones img {
+    width: 50%;
+}
+
+#icones {
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* #partyScore {
+    display: flex;
+} */
+
+.result {
+    background-color: #fff;
+    font-size: 1.5em;
+    /* padding: 0 13px; */
+    color: #f7d020;
+    font-weight: 400;
+    text-align: center;
+    margin-right: 5px;
+    background: linear-gradient(#f7efe3, #cf4747 80%);
+    /* margin-left: 300px; */
+    border: 3px solid #cf4747;
+    border-radius: 15px;
+    /* text-shadow: 2px 0 0 #e2d8ab, -2px 0 0 #e2d8ab, 0 2px 0 #e2d8ab, 0 -2px 0 #e2d8ab, 1px 1px #e2d8ab, -1px -1px 0 #e2d8ab, 1px -1px 0 #e2d8ab, -1px 1px 0 #e2d8ab; */
+
+}
+
+.content1 {
+    /* width: 256px; */
+    height: 400px;
+    margin: 0 auto;
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+}
+
+
+
+.content1 .logo1 {
+    width: 256px;
+    height: 256px;
+    position: relative;
+    animation: logoAnim 5s 1;
+}
+
+.content1 .shadow {
+    width: 256px;
+    height: 15px;
+    background-color: #000;
+    position: relative;
+    top: 100px;
+    opacity: 0.2;
+    border-radius: 50%;
+}
+
+
+.animDollar {
+
+    animation: shadowAnim 5s 1;
+
+}
+
+@keyframes logoAnim {
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    20% {
+        transform: scale(0.5);
+
+    }
+
+    70% {
+        transform: scale(2);
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+/* @keyframes logoAnim {
+
+    20% {
+        top: 70px;
+    }
+
+    35% {
+        top: 0;
+    }
+
+    50% {
+        top: 70px;
+    }
+
+    75% {
+        top: 0;
+    }
+
+    95% {
+        top: 70;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+} */
+
+@keyframes shadowAnim {
+    20% {
+        opacity: 0.7;
+        margin: 0px 50px 0 50px;
+    }
+
+    35% {
+        opacity: 0.1;
+        margin: 0;
+    }
+
+    50% {
+        opacity: 0.7;
+        margin: 0px 50px 0 50px;
+    }
+
+    75% {
+        opacity: 0.1;
+        margin: 0;
+    }
+
+    95% {
+        opacity: 0.7;
+        margin: 0px 50px 0 50px;
+    }
+
+    100% {
+        display: none;
+        opacity: 0;
+    }
+}
+
+@media screen and (max-width:476px) {
+    main img {
+        width: 60%;
+    }
+
+    #container {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 80%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        width: 75%;
+    }
+
+    .parent-bg {
+        border-radius: 80px 80px;
+        display: flex;
+        justify-content: center;
+        /* width: 95vw; */
+        width: 75%;
+        height: 126px;
+        /* height: 398px; */
+        position: absolute;
+        overflow: hidden;
+        background-color: #fff;
+
+        position: relative;
+
+    }
+
+
+    .parent {
+        border-radius: 80px 80px;
+        display: flex;
+        justify-content: center;
+        /* width: 95vw; */
+        width: 100%;
+        height: 146px;
+        /* height: 398px; */
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+
+        border: 3px solid #c9a743;
+        border-top: 19px solid #c9a743;
+        border-bottom: 19px solid #c9a743;
+        border-radius: 38px;
+        padding: 0 22px;
+    }
+
+    .bg:before {
+        content: "\01F4B0\01FA99\01FA99\01F4B0";
+        font-size: 3em;
+        top: 0;
+        right: 15%;
+        position: absolute;
+    }
+
+    .bg:after {
+        content: "💴\01FA99\01FA99💴";
+        font-size: 3em;
+        top: 75%;
+        left: 10%;
+        position: absolute;
+    }
+
+    .bg-marron {
+        width: 93%;
+        margin: auto;
+        height: 75%;
+        position: relative;
+    }
+
+
+    .animDollar::before {
+        content: "\01FA99💴 sensational ! 💴\01FA99";
+        font-size: 1.5em;
+        position: absolute;
+        color: #c9a743;
+        text-transform: uppercase;
+        top: 12%;
+        left: 10%;
+        font-weight: bold;
+    }
+
+    .animDollar::after {
+        content: " \01FA99 $10,000 Won !!! \01FA99";
+        font-size: 2em;
+        position: absolute;
+        color: #c9a743;
+        text-transform: uppercase;
+        top: 18%;
+        left: 10%;
+    }
+
+    .child img {
+        height: 116px;
+        width: 93px;
+        padding: 0px 1px;
+    }
+
+    .slide-left,
+    .slide-middle,
+    .slide-right {
+        height: 120px;
+        width: 100%;
+        margin: auto;
+
+
+    }
+
+    #slide-middle img {
+        border-left: 1px dashed gray;
+        border-right: 1px dashed gray;
+    }
+
+    button {
+        background: #e6c35b;
+        width: 370px;
+        height: 59px;
+        border: navajowhite;
+        border-radius: 10px;
+        margin: 25px 0 25px 0;
+    }
+
+    .clicHead {
+        color: #f6b009;
+        font-weight: 400;
+        font-size: 2em;
+        width: 84px;
+    }
+
+    .clicHead>img {
+        width: 60%;
+    }
+
+    #totaux img {
+        width: 70%;
+        height: 70%;
+        margin: 0 16px 0 0;
+    }
+
+    #totauxP {
+        background: radial-gradient(#f7efe3, #cf4747);
+        /* margin-left: 300px; */
+        border: 3px solid #cf4747;
+        padding: 15px 4px 2px;
+        border-radius: 15px;
+    }
+
+    #totaux {
+        /* margin-left: 300px; */
+        border: 3px solid #cf4747;
+        padding: 15px 0;
+        /* border-radius: 15px; */
+    }
+
+    #totaux {
+        position: relative;
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        border-top: 19px solid #c9a743;
+        border-bottom: 19px solid #c9a743;
+        margin-left: 300px;
+        padding: 0 0;
+        border-radius: 38px;
+        width: 100%;
+        margin: auto;
+    }
+
+    #partyScore {
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        /* width: 23vw; */
+        /* height: 20vh; */
+        border-radius: 20px;
+        color: white;
+        /* margin: 10px 0; */
+        font-size: 1.2em;
+    }
+
+    #gameScore {
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        /* width: 20vw;
+        height: 20vh; */
+        border-radius: 20px;
+        color: white;
+        font-size: 1.2em;
+    }
+
+    #popup {
+        width: 300px;
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        border-radius: 20px;
+        box-shadow: 2px 0 0 #e2d8ab, -2px 0 0 #e2d8ab, 0 2px 0 #e2d8ab, 0 -2px 0 #e2d8ab, 1px 1px #e2d8ab, -1px -1px 0 #e2d8ab, 1px -1px 0 #e2d8ab, -1px 1px 0 #e2d8ab;
+        padding: 10px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+    }
+}
+
+
+.bg-marron {
+
+    /* width: 75%; */
+    margin: auto;
+    height: 75%;
+    position: relative;
+}
+
+
+
+
+
+.bg {
+    padding: 59px 0;
+    position: relative;
+
+    background: radial-gradient(#f7efe3, #cf4747);
+    /* margin-left: 300px; */
+    border: 3px solid #cf4747;
+
+    border-radius: 15px;
+}
+
+#manette {
+    position: relative;
+    margin-left: 100%;
+}
+
+#cercle {
+    position: absolute;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    background: radial-gradient(#fff, #c9a743);
+    bottom: 75px;
+}
+
+#baton {
+    position: absolute;
+    height: 200px;
+    width: 30px;
+    background-color: #c9a743;
+    bottom: -87px;
+    border-bottom-right-radius: 20px;
+}
+
+@media screen and (max-width:991px) and (min-width:475px) {
+    main img {
+        width: 20%;
+    }
+
+    #container {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 85%;
+        left: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+
+    .parent-bg {
+        border-radius: 80px 80px;
+        display: flex;
+        justify-content: center;
+        width: 475px;
+        /* height: 398px; */
+        height: 126px;
+        position: absolute;
+        overflow: hidden;
+        background-color: #fff;
+
+        position: relative;
+
+    }
+
+
+    .parent {
+        border-radius: 80px 80px;
+        display: flex;
+        justify-content: center;
+        width: 475px;
+        /* height: 398px; */
+        /* height: 126px; */
+        height: 158px;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+
+        position: relative;
+        border: 3px solid #c9a743;
+        border-top: 19px solid #c9a743;
+        border-bottom: 19px solid #c9a743;
+        border-radius: 38px;
+
+    }
+
+    .bg {
+        padding: 59px 0;
+        position: relative;
+        background: radial-gradient(#f7efe3, #cf4747);
+        /* margin-left: 300px; */
+        border: 3px solid #cf4747;
+        border-radius: 15px;
+    }
+
+    .bg:before {
+        content: "\01F4B0\01FA99\01FA99\01FA99\01FA99\01F4B0";
+        font-size: 3em;
+        top: 0;
+        right: 15%;
+        position: absolute;
+    }
+
+    .bg:after {
+        content: "💴\01FA99\01FA99\01FA99\01FA99💴";
+        font-size: 3em;
+        top: 75%;
+        left: 10%;
+        position: absolute;
+    }
+
+
+    .animDollar::before {
+        content: "\01FA99💴 sensational ! 💴\01FA99";
+        font-size: 3em;
+        position: absolute;
+        color: #c9a743;
+        text-transform: uppercase;
+        top: 7%;
+        left: 10%;
+
+    }
+
+    .animDollar::after {
+        content: " \01FA99 $10,000 Won !!! \01FA99";
+        font-size: 2em;
+        position: absolute;
+        color: #c9a743;
+        text-transform: uppercase;
+        top: 15%;
+        left: 30%;
+
+    }
+
+    .child img {
+        height: 116px;
+        width: 150px;
+        padding: 0px 1px;
+
+    }
+
+    #slide-middle img {
+        border-left: 1px dashed gray;
+        border-right: 1px dashed gray;
+    }
+
+    .clicHead {
+        color: #f6b009;
+        font-weight: 400;
+        font-size: 2.5em;
+        width: 107px;
+    }
+
+    #totauxP img {
+        width: 55%;
+    }
+
+    #totaux img {
+        width: 70%;
+        height: 70%;
+        margin: 0 16px 0 0;
+    }
+
+    #totauxP {
+        background: radial-gradient(#f7efe3, #cf4747);
+        /* margin-left: 300px; */
+        border: 3px solid #cf4747;
+        padding: 15px 4px 2px;
+        border-radius: 15px;
+    }
+
+    #totaux {
+        /* margin-left: 300px; */
+        border: 3px solid #cf4747;
+        padding: 15px 0;
+        /* border-radius: 15px; */
+    }
+
+    #totaux {
+        position: relative;
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        border-top: 19px solid #c9a743;
+        border-bottom: 19px solid #c9a743;
+        margin-left: 300px;
+        padding: 0 0;
+        border-radius: 38px;
+        width: 100%;
+        margin: auto;
+    }
+
+    #partyScore {
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        width: 100%;
+        /* height: 20vh; */
+        border-radius: 20px;
+        color: white;
+        /* margin: 10px 0; */
+        font-size: 1.2em;
+    }
+
+    #gameScore {
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        /* width: 20vw;
+        height: 20vh; */
+        border-radius: 20px;
+        color: white;
+        font-size: 1.2em;
+    }
+
+}
+
+@media screen and (min-width:992px) {
+    main img {
+        width: 20%;
+
+    }
+
+    #container {
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .parent {
+
+        border-radius: 80px 80px;
+        display: flex;
+        justify-content: center;
+        width: 498px;
+        /* height: 398px; */
+        /* height: 126px; */
+        height: 160px;
+        position: relative;
+        overflow: hidden;
+        background-color: #fff;
+        position: relative;
+        border: 3px solid #c9a743;
+        border-top: 19px solid #c9a743;
+        border-bottom: 19px solid #c9a743;
+        border-radius: 38px;
+
+    }
+
+    .bg {
+        padding: 59px 0;
+        position: relative;
+
+        background: radial-gradient(#f7efe3, #cf4747);
+        /* margin-left: 300px; */
+        border: 3px solid #cf4747;
+
+        border-radius: 15px;
+
+    }
+
+    .bg:before {
+        content: "\01F4B0\01FA99\01FA99\01FA99\01FA99\01F4B0";
+        font-size: 3em;
+        top: 0;
+        right: 15%;
+        position: absolute;
+    }
+
+    .bg:after {
+        content: "💴\01FA99\01FA99\01FA99\01FA99💴";
+        font-size: 3em;
+        top: 75%;
+        left: 10%;
+        position: absolute;
+    }
+
+    .animDollar::before {
+        content: "\01FA99💴 sensational ! 💴\01FA99";
+        font-size: 3em;
+        position: absolute;
+        color: #c9a743;
+        text-transform: uppercase;
+        top: 13%;
+        left: 10%;
+
+    }
+
+    .animDollar::after {
+        content: " \01FA99 $10,000 Won !!! \01FA99";
+        font-size: 2em;
+        position: absolute;
+        color: #c9a743;
+        text-transform: uppercase;
+        top: 20%;
+        left: 20%;
+
+    }
+
+    .child img {
+        height: 116px;
+        width: 150px;
+        padding: 0px 1px;
+    }
+
+    #slide-middle img {
+        border-left: 1px dashed gray;
+        border-right: 1px dashed gray;
+    }
+
+    button {
+        background: #e6c35b;
+        width: 370px;
+        height: 59px;
+        border: navajowhite;
+        border-radius: 10px;
+        margin: 25px 0 25px 0;
+    }
+
+    .clicHead {
+        color: #f6b009;
+        font-weight: 400;
+        font-size: 2.5em;
+        width: 107px;
+    }
+
+    #totauxP img {
+        width: 55%;
+    }
+
+    #totaux img {
+        width: 70%;
+        height: 70%;
+        margin: 0 16px 0 0;
+    }
+
+    #totauxP {
+        background: radial-gradient(#f7efe3, #cf4747);
+        margin-left: 300px;
+        border: 3px solid #cf4747;
+        padding: 15px 4px 2px;
+        border-radius: 15px;
+    }
+
+    #totaux {
+        margin-left: 300px;
+        border: 3px solid #cf4747;
+        padding: 15px 0;
+        /* border-radius: 15px; */
+    }
+
+    #totaux {
+        position: relative;
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        border-top: 19px solid #c9a743;
+        border-bottom: 19px solid #c9a743;
+        margin-left: 300px;
+        padding: 0 0;
+        border-radius: 38px;
+        width: 100%;
+        margin: auto;
+    }
+
+    #partyScore {
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        width: 23vw;
+        /* height: 20vh; */
+        border-radius: 20px;
+        color: white;
+        /* margin: 10px 0; */
+        font-size: 1.2em;
+    }
+
+    #gameScore {
+        background-color: #30161c;
+        border: 3px solid #c9a743;
+        /* width: 20vw;
+        height: 20vh; */
+        border-radius: 20px;
+        color: white;
+        font-size: 1.2em;
+    }
+}
+
+.d-grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    text-align: left;
+}
+
+.scoreim {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr 1fr;
+    text-align: left;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+#totaux img {
+    border-radius: 5px;
+}
